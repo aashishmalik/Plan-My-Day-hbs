@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PLAN MY DAY</title>
+    <link rel='stylesheet' href="/css/bootstrap.css">
+</head>
+
+<body style="color:forestgreen; background-color:mediumblue">
+    <h1 class="text-center">{{title}}</h1>
+
+    <div class="container">
+        <form action="/tasks" method="POST">
+            <div class="container row  my-4">
+                <input class="form-control col mx-4 " type="text" name="name" placeholder="Enter Task">
+                <button class="btn btn-danger col-4 mx-2"> ADD</button>
+            </div>
+        </form>
+        <div class=" container row">
+            <ul class="list-group  col">
+                {{#each tasks as |task|}}
+                <li class="list-group-item my-2">{{task.name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
